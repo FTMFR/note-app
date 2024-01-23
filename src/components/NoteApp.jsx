@@ -46,6 +46,10 @@ const NoteApp = () => {
     setSelectedColor(color);
   };
 
+  const emptyHandler = () => {
+    setNoteList([]);
+  };
+
   useEffect(() => {
     console.log(inputValue, addIcon, addNote, noteList);
   }, [inputValue, addIcon, addNote, noteList]);
@@ -63,7 +67,7 @@ const NoteApp = () => {
         />
         <div className="bottom">
           <div className="icon">
-            <CiEdit className="edit" />
+            <CiEdit className="edit" onClick={emptyHandler} />
             <CiSquarePlus className="plus" onClick={addNoteHandler} />
           </div>
           <ColorBox onColorSelect={handleColorSelect} />
